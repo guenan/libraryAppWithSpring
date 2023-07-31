@@ -11,17 +11,17 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     private int userId;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String userName;
-    @Column(name = "Password")
+    @Column(name = "password")
     private String userPassword;
-    @Column(name = "Email")
+    @Column(name = "email")
     private String userEmail;
-    @Column(name = "Role")
+    @Column(name = "role")
     private String userRole;
-    @OneToMany(
+  /*  @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY,
@@ -33,7 +33,7 @@ public class User {
             fetch = FetchType.LAZY,
             orphanRemoval = true
     )
-    @JoinColumn(name = "UserID")
-    private List<Question> questions;
+    @JoinColumn(name = "user_id")
+    private List<Question> questions;*/
 
 }

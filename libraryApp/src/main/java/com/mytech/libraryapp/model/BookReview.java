@@ -11,9 +11,15 @@ import java.util.Date;
 public class BookReview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private int bookReviewId;
-    @ManyToOne(
+    @Column(name = "score")
+    private int bookReviewScore;
+    @Column(name = "description")
+    private String bookReviewDescription;
+    @Column(name = "rating_date")
+    private Date bookReviewDate;
+   /* @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
@@ -21,7 +27,7 @@ public class BookReview {
             fetch = FetchType.EAGER
 
     )
-    @JoinColumn(name = "UserID")
+    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne(
             cascade = {
@@ -31,9 +37,7 @@ public class BookReview {
             fetch = FetchType.EAGER
 
     )
-    @JoinColumn(name = "BookID")
+    @JoinColumn(name = "book_id")
     private Book book;
-    private int bookReviewScore;
-    private String bookReviewDescription;
-    private Date bookReviewDate;
+*/
 }

@@ -10,11 +10,11 @@ import java.util.Date;
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private int answerId;
-    @Column(name = "Content")
+    @Column(name = "content")
     private String answerContent;
-    @Column(name = "AnswerDate")
+    @Column(name = "answer_date")
     private Date answerDate;
 
 }
