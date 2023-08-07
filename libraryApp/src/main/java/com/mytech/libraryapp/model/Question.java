@@ -10,18 +10,18 @@ import java.util.Date;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private int questionId;
-    @Column(name = "Content")
+    @Column(name = "content")
     private String questionContent;
-    @Column(name = "QuestionDate")
+    @Column(name = "question_date")
     private Date questionDate;
-    @OneToOne(
+/*    @OneToOne(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "QuestionID")
-    private Answer answer;
+    @JoinColumn(name = "question_id")
+    private Answer answer;*/
 
 }

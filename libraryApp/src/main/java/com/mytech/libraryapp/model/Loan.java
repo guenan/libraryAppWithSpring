@@ -9,9 +9,11 @@ import java.util.Date;
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private int loanId;
-    @ManyToOne(
+    @Column(name = "loan_date")
+    private Date loanDate;
+  /*  @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
@@ -19,7 +21,7 @@ public class Loan {
             fetch = FetchType.EAGER
     )
     @JoinColumn(
-            name = "UserID"
+            name = "user_id"
     )
     private User user;
     @ManyToOne(
@@ -29,8 +31,7 @@ public class Loan {
             },
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "BookID")
-    private Book book;
-    @Column(name = "LoanDate")
-    private Date loanDate;
+    @JoinColumn(name = "book_id")
+    private Book book;*/
+
 }

@@ -11,31 +11,33 @@ import java.util.List;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     private int bookId;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String bookName;
 
-    @Column(name = "Description")
+    @Column(name = "description")
     private String bookDescription;
 
-    @Column(name = "Image")
+    @Column(name = "image_book")
     private String bookImage;
-    @Column(name = "Category")
+    @Column(name = "category")
     private String bookCategory;
-    @Column(name = "Author")
+    @Column(name = "author")
     private String bookAuthor;
-    @Column(name = "CopiesInStock")
-    private int copiesInStock;
-    @Column(name = "CopiesAvailable")
-    private int copiesAvailable;
-    @OneToMany(
+
+    @Column(name = "copies_available")
+    private int copies_available;
+    @Column(name = "copies_in_stock")
+    private int copies_in_tock;
+
+/*    @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY,
-            mappedBy = "UserID"
+            mappedBy = "book"
 
     )
-    private List<BookReview> bookReviews;
+    private List<BookReview> bookReviews;*/
 }
