@@ -16,6 +16,8 @@ export const Carousel: FC<carouselProps> = (props) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        prevArrow: <button className="slick-arrow slick-prev">Previous</button>,
+        nextArrow: <button className="slick-arrow slick-next">Next</button>,
     };
 
     return (

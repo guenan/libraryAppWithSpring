@@ -54,9 +54,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to library frontend app</h1>
-        <h2>The size of books list is {bookList.length}</h2>
-
         <div>
             <MainPage books={bookList}  />
         </div>
