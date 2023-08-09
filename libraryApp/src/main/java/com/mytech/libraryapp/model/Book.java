@@ -1,5 +1,7 @@
 package com.mytech.libraryapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -32,12 +34,11 @@ public class Book {
     @Column(name = "copies_in_stock")
     private int copies_in_tock;
 
-/*    @OneToMany(
+    @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY,
             mappedBy = "book"
-
     )
-    private List<BookReview> bookReviews;*/
+    private List<BookReview> bookReviews;
 }

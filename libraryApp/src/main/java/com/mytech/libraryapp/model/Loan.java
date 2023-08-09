@@ -1,9 +1,11 @@
 package com.mytech.libraryapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+
 @Entity
 @Data
 public class Loan {
@@ -13,7 +15,7 @@ public class Loan {
     private int loanId;
     @Column(name = "loan_date")
     private Date loanDate;
-  /*  @ManyToOne(
+    @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
@@ -23,7 +25,10 @@ public class Loan {
     @JoinColumn(
             name = "user_id"
     )
+    @JsonIgnore
     private User user;
+
+    /*
     @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,

@@ -19,8 +19,13 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @GetMapping("/searchBooks")
+    @GetMapping("/searchNamedBooks")
     public List<Book> showBooksByName(@RequestParam("book_name") String bookName){
         return bookService.getBooksByName(bookName);
+    }
+
+    @GetMapping("/searchCategoryBooks")
+    public List<Book> showBooksByCategory(@RequestParam("book_category") String category){
+        return bookService.getBooksByCategory(category);
     }
 }

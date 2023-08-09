@@ -19,4 +19,11 @@ public class BookService {
     public List<Book> getBooksByName(String bookName){
         return bookRepository.findByBookNameContaining(bookName);
     }
+
+    public List<Book> getBooksByCategory(String bookCategory){
+        if(bookCategory.toLowerCase().equals("All".toLowerCase())){
+            return bookRepository.findAll();
+        }
+        return bookRepository.findByBookCategoryContaining(bookCategory);
+    }
 }
