@@ -7,6 +7,7 @@ import BookModel from "./models/BookModel";
 import {MainPage} from "./views/MainPage/MainPage";
 
 import {getBookModelListFromJsonBookList} from "./utilities/JsonModelExtracter";
+import SearchPage from "./views/SearchPage/SearchPage";
 
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
   return (
     <div className="App">
         <div>
-            <MainPage books={bookList}  />
+            {/*<MainPage books={bookList}  />*/}
+            <SearchPage searchValue=""  />
         </div>
     </div>
   );
