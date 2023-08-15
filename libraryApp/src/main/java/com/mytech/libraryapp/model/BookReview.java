@@ -1,5 +1,7 @@
 package com.mytech.libraryapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,7 +21,7 @@ public class BookReview {
     private String bookReviewDescription;
     @Column(name = "rating_date")
     private Date bookReviewDate;
-   /* @ManyToOne(
+    @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
@@ -29,6 +31,7 @@ public class BookReview {
     )
     @JoinColumn(name = "user_id")
     private User user;
+
     @ManyToOne(
             cascade = {
                     CascadeType.PERSIST,
@@ -38,6 +41,7 @@ public class BookReview {
 
     )
     @JoinColumn(name = "book_id")
+    @JsonIgnore
     private Book book;
-*/
+
 }

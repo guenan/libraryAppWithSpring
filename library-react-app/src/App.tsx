@@ -6,6 +6,10 @@ import {useEffect} from "react";
 import BookModel from "./models/BookModel";
 import {MainPage} from "./views/MainPage/MainPage";
 
+import {getBookModelListFromJsonBookList} from "./utilities/JsonModelExtracter";
+import SearchPage from "./views/SearchPage/SearchPage";
+
+
 function App() {
     // state to save bookList
     const [bookList, setBookList] = useState<BookModel[]>([]);
@@ -21,24 +25,8 @@ function App() {
 /*        const response = await axios.get("http://localhost:9002/api/books");
         const apiBookListJson = response.data;*/
 
+        const apiBookList: BookModel[] = getBookModelListFromJsonBookList(apiBookListJson);
 
-        const apiBookList: BookModel[] = [];
-
-        for (const apiBookListElement of apiBookListJson) {
-            apiBookList.push(
-                {
-                    "bookId": apiBookListElement.bookId,
-                    "bookName": apiBookListElement.bookName,
-                    "bookDescription": apiBookListElement.bookDescription,
-                    "bookImage": apiBookListElement.bookImage,
-                    "bookCategory": apiBookListElement.bookCategory,
-                    "bookAuthor": apiBookListElement.bookAuthor,
-                    "copies_available": apiBookListElement.copies_available,
-                    "copies_in_tock": apiBookListElement.copies_available
-                }
-            );
-
-        }
         setBookList(apiBookList);
     }
 
@@ -55,7 +43,8 @@ function App() {
   return (
     <div className="App">
         <div>
-            <MainPage books={bookList}  />
+            {/*<MainPage books={bookList}  />*/}
+            <SearchPage searchValue=""  />
         </div>
     </div>
   );

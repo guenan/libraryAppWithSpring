@@ -21,13 +21,14 @@ public class User {
     private String userEmail;
     @Column(name = "role")
     private String userRole;
-  /*  @OneToMany(
+    @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY,
             mappedBy = "user"
     )
     private List<Loan> loans;
+    /*
     @OneToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,

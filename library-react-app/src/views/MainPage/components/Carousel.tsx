@@ -15,9 +15,7 @@ export const Carousel: FC<carouselProps> = (props) => {
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: <button className="slick-arrow slick-prev">Previous</button>,
-        nextArrow: <button className="slick-arrow slick-next">Next</button>,
+        slidesToScroll: 1
     };
 
     return (
@@ -27,6 +25,27 @@ export const Carousel: FC<carouselProps> = (props) => {
                     <ShowABook book={book} />
                 </div>
             ))}
+
+{/*
+            <div>
+                Slider 1
+            </div>
+
+            <div>
+                Slider 2
+            </div>
+
+            <div>
+                Slider 3
+            </div>
+
+            <div>
+                Slider 4
+            </div>
+*/}
+
+
+
         </Slider>
     );
 };
