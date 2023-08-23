@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -20,10 +21,14 @@ public class BookService {
         return bookRepository.findByBookNameContaining(bookName);
     }
 
-    public List<Book> getBooksByCategory(String bookCategory){
+    public List<Book> getBooksByNameCategory(String bookCategory, String bookName){
         if(bookCategory.toLowerCase().equals("All".toLowerCase())){
-            return bookRepository.findAll();
+            return getBooksByName(bookName);
         }
-        return bookRepository.findByBookCategoryContaining(bookCategory);
+        return bookRepository.findByBookCategoryContainingAndBookNameContaining(bookCategory, bookName);
+    }
+
+    public Optional<Book> getBookById(int id){
+        return bookRepository.findById(id);
     }
 }
