@@ -57,8 +57,8 @@ function App() {
   return (
     <div className="App">
         <div>
-            {/*<MainPage books={bookList}  />*/}
-            {/*<SearchPage searchValue=""  />*/}
+            <MainPage books={bookList}  />
+            <SearchPage searchValue=""  />
             <BookDetailPage book={bookList[0]} />
         </div>
     </div>
